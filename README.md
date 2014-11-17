@@ -1,6 +1,6 @@
 #Intro to HTML5 and Responsive Design
 
-This slide content was created for the Ladies Learning Code workshop "Intro to HTML5 and Responsive Design", taking place on October 25th, 2014. The course covers HTML and CSS basics, media queries, responsive design theory and practice, and is intended for complete beginners.
+This slide content was created for the Ladies Learning Code workshop "Intro to HTML5 and Responsive Design", taking place on November 22nd, 2014. The course covers HTML and CSS basics, media queries, responsive design theory and practice, and is intended for complete beginners.
 
 ##NOTE for attendees of Emily's October 25th, 2014 workshop: 
 
