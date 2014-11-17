@@ -1,0 +1,9 @@
+@import "variables";
+@import "mixins";
+
+/* Styles specific to this workshop
+------------------------------------*/
+.slide img {
+	display: block;
+	margin: 0 auto;
+}

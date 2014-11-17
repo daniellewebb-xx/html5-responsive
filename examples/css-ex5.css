@@ -1,0 +1,80 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h1, h2, h3, p {
+	text-align: center;
+}
+
+header {
+	padding: 3rem 0;
+	background-color: #ccc;
+}
+
+section {
+	background-color: #eee;
+	padding: 3rem 0;
+}
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 2rem auto;
+	border: 5px solid #000;
+}
+
+.box-container {
+	text-align: center;
+}
+
+.box {
+	width:20%;
+	border:2px solid #000;
+	display:inline-block;
+	color: #fff;
+}
+
+.box1, .box2, .box3 {
+	padding: 2rem 1rem;
+}
+
+.box4, .box5, .box6 {
+	 padding: 5rem 1rem;
+}
+
+.box1 {
+	background-color: #9B59B6;
+}
+
+.box2 {
+	background-color: #F9BF3B;
+}
+.box3 {
+	background-color: #F62459;
+}
+.box4 {
+	background-color: #E74C3C;
+}
+.box5 {
+	background-color: #336E7B;
+}
+.box6 {
+	background-color: #66CC99;
+}
+
+.box .special-paragraph {
+	font-family: serif;
+	color: #000;
+	text-decoration: underline;
+}
+
+/*ADD SOME CSS RULES AFTER THIS COMMENT TO PRACTICE SELECTING ELEMENTS*/

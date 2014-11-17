@@ -1,0 +1,72 @@
+A list of important HTML elements:
+
+<element></element> - description/name of element
+
+THE "ROOT" ELEMENT:
+<html></html> - html element. Every other element lives inside of this one.
+
+
+METADATA:
+<head></head> - the metadata for the site goes between these tags. It doesn't show up on the webpage.
+
+<meta> - generic tag for metadata. Used inbetween the head element.
+
+<link> - used to link CSS (and Javascript) with the HTML document.
+
+<title></title> - what's in here goes on the tab bar for the page, can only contain text.
+
+
+CONTENT SECTIONS:
+<body></body> - everything inside of these tags shows up on the web page. There can only be one of these per HTML document.
+
+<section></section> - generic section of a doc, should have a heading (h1 - h6) as a child element.
+
+<nav></nav> - a section with only navigation links.
+
+<article></article> - content that could exist independently of the rest of the site's content, think a blog article.
+
+<aside></aside> - content loosely related to the page content. Could be removed and page would still make sense. Think a sidebar.
+
+<header></header> - not to be confused with <head></head>! Usually contains logo, title, and nav element.
+
+<main></main> - the main/important content of a page.
+
+<footer></footer> - usually has a copyright notice, sitemap, contact information, etc.
+
+<h1></h1>, <h2></h2>, <h3></h3>, <h4></h4>, <h5><h5>, <h6></h6> - heading elements, in order of most to least important. Generally only one h1 element on a page, but can be multiple of any of them.
+
+
+"GROUPING" CONTENT:
+<p></p> - a paragraph
+
+<ol></ol> - an ordered list (1., 2., 3.)
+
+<ul></ul> - an unordered list (bulleted list)
+
+<li></li> - list elements. At least one must go inside of all ul and ol elements.
+
+<div></div> - generic container, no semantic meaning. Block element.
+
+
+INLINE SEMANTIC ELEMENTS:
+<span></span> - generic text element, no semantic meaning. Only use if no other more semantic elements are suitable.
+
+<a></a> - a link a.k.a "anchor" tag
+
+<em></em> - text with emphasis, like a stress accent.
+
+<strong></strong> - text that is especailly important.
+
+<br> - line break.
+
+
+EMBEDDED CONTENT (in this case,media):
+<img> - an image
+
+
+*************************************************************
+For extra fun times, check out the <form> and <table> elements - forms are used all over on websites, tables are used much less these days. But they're still both important tags!
+
+The whole list: https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list
+
+NOTE: the elements above that don't have closing tags don't need them! It's not a typo :)

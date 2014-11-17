@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Ladies Learning Code</title>
+    <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+    <link rel="stylesheet" href="framework/css/slideshow.css">
+
+    <!-- Theme-specific styles -->
+    <link href='http://fonts.googleapis.com/css?family=Quicksand|Pacifico|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="framework/css/font-awesome.css">
+    <link rel="stylesheet" href="framework/css/highlightjs-themes/monokai.css">
+    <link rel="stylesheet" href="framework/css/theme-llc.css">
+    <link rel="shortcut icon" href="framework/img/favicon.ico"> 
+
+    <!-- Workshop-specific styles -->
+    <link rel="stylesheet" href="framework/css/workshop.css">
+
+    <!-- Takes care of CSS3 prefixes! -->
+    <script src="framework/scripts/prefixfree.min.js"></script>
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body data-duration="360">
+
+    <base target="_blank">
+
+    <!-- First/Intro slide -->
+    <header class="intro slide">
+        <img class="logo" src="framework/img/logo-llc-white.png">
+        <div class="info">
+            <h1>
+                <span class="title-bg">Intro to HTML5 and Responsive Design</span><br>
+                <!-- second line if needed -->
+            </h1>
+            <h2><span>with</span> Emily Porta</h2>
+
+            <img class="instructor-img" src="framework/img/emily-porta.jpg" alt="Emily Porta">
+            <ul>
+                <li><i class="fa fa-envelope"></i><a href="mailto:">eeporta@gmail.com</li>
+                <li><i class="fa fa-desktop"></i><a href="#">emilyporta.com</a></li>
+                <li><i class="fa fa-twitter"></i><a href="http://twitter.com/agentemily">@agentemily</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="slide title">
+            <h1>Let's get started!</h1>
+        </section>
+
+        <section class="slide">
+            <h2>Workshop Outline</h2>
+            <p><strong>Part One: Fundamentals</strong></p>
+            <ul>
+                <li class="delayed">Setting up our environment (computers)</li>
+                <li class="delayed">What is responsive design?</li>
+                <li class="delayed">Thinking mobile and responsive</li>
+                <li class="delayed">Crash course in HTML5</li>
+                <li class="delayed">CSS fundamentals</li>
+            </ul>
+            <p class="delayed"><em>Lunch Break!</em></p>
+
+            <p class="delayed"><strong>Part Two: Implementation</strong></p>
+            <ul>
+                <li class="delayed">CSS fundamentals continued</li>
+                <li class="delayed">HTML + CSS for responsive design: key features</li>
+                <li class="delayed">Tools to test your designs</li>
+                <li class="delayed">Images</li>
+                <li class="delayed">Typography</li>
+                <li class="delayed">Layout</li>
+            </ul>
+        </section>
+
+        <section class="slide title">
+          <h1>Getting Set Up</h1>
+        </section>
+        
+        <section class="slide">
+          <h2>The WIFI</h2>
+          <p>Name: The Lab</p>
+          <p>Password: Thisisthelab</p>
+
+          <h2>Our text editor: <a href="http://www.sublimetext.com/3">Sublime Text <strong>THREE</strong>!</a></h2>
+          <p>No Dreamweaver, Word, etc. please!</p>
+        </section>
+
+        <section class="slide">
+
+          <h2>Our Browser: <a href="https://www.google.com/chrome/?">Google Chrome</a></h2>
+          <p>Firefox, Safari, and IE 10+ are great, but their dev tools are different so stick to Chrome for this class please!</p>
+          <p>Make sure your default browser is Chrome! <a href="https://support.google.com/chrome/answer/95417?hl=en">Here are the instructions to do that.</a></p>
+
+          <h2>Our Emulator: the Chrome Web Inspector</h2>
+          <p>Make sure you're up to date! Go to chrome://chrome/</p>
+          <p>Right click > "Inspect Element" > ensure little phone is blue!</p>
+          <img src="framework/img/emulation-mode.jpg" alt"emulation mode">
+        </section>
+
+        <section class="slide title">
+            <h1>What is Responsive Design?</h1>
+        </section>
+        
+        <section class="slide">
+            <h2>Different types of web design:</h2>
+            <p>In order to understand mobile/responsive web design and development, we have to understand what our options are:</p>
+            <ul>
+                <li>Fixed</li>
+                <li>Fluid</li>
+                <li>Adaptive</li>
+                <li>Responsive</li>
+            </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Fixed web design</h2>
+                <ul>
+                    <li class="delayed">What it sounds like!</li>
+                    <li class="delayed">Everything has a set width (eg. 960px). A holdover from before mobile "smart" devices were common.</li>
+                    <li class="delayed">Resize the browser, or look at it on a mobile screen and nothing will change</li>
+                    <li class="delayed">You'll need an "m dot" site if you want something mobile friendly :( </li>
+                </ul>
+                <p class="delayed">Example: <a href="http://toronto.ca">toronto.ca</a> </br>(open this up on your phone or resize the browser)</p>
+                <p class="delayed">Example: <a href="https://m.facebook.com/">m.facebook.com</a></p>
+        </section>
+
+        <section class="slide">
+            <h2>Fluid web design</h2>
+                <ul>
+                    <li class="delayed">Based on percentages</li>
+                    <li class="delayed">Each block of content takes up some percentage of the page, for example a sidebar with a width of ~30% and main section with a width of ~70%</li>
+                    <li class="delayed">When you resize the browser, the blocks of content will resize relative to the size of the page (aka the "viewport")</li>
+                    <li class="delayed"><strong>Not</strong> made for specific devices. Just reducing the width of your content is usually not the best experience for small screens, doesn't give us enough control.</li>
+                </ul>
+        </section>
+
+        <section class="slide">
+            <h2>Adaptive web design</h2>
+                <ul>
+                    <li class="delayed">Uses a series fixed layouts</li>
+                    <li class="delayed">Then adds in media queries to target specific viewport sizes</li>
+                    <li class="delayed">The content itself changes</li>
+                    <li class="delayed">Best to think of it as a <em>set</em> of fixed layouts that are envoked in response to the device size</li>
+                </ul>
+                <p class="delayed">Example: <a href="http://goo.gl/lUyNrZ" alt="Screaming Frog website">goo.gl/lUyNrZ</a></p>
+        </section>
+
+        <section class="slide">
+            <h2>And finally...responsive web design!</h2>
+                <ul>
+                    <li class="delayed">Uses a fluid grid layout to get that sweet free adaptability</li>
+                    <li class="delayed"><em>Also</em> uses media queries to change the look and feel depending on device size</li>
+                    <li class="delayed">So your grid is both <strong>flexible</strong> inbetween common device sizes, and designed with <strong>breakpoints</strong> so that content is presented in the most suitable way for the device.</li>
+                    <li class="delayed">Content stays largely the same or similar.</li>
+                    <p class="delayed">Example: <a href="http://goo.gl/JNfJ5X">goo.gl/JNfJ5X</a></p>
+                    <p class="delayed">What do you notice about the changing layout?</p>
+                </ul>
+        </section>
+
+        <section class="slide">
+          <h2>Responsive Design: Definition</h2>
+          <p><strong>Responsive design means the best experience on all browsers, attained through responding to the viewport size.</strong></p>
+          <p>Note: NOT the device size or anything about a particular device. We size according to width, height, etc. not to a device (eg. an iPhone) specifically.</p>
+        </section>
+
+        <section class="slide">
+            <h1>Recap</h1>
+            <h2>This website illustrates all the differences we just discussed:</h2>
+            <p><a href="http://liquidapsive.com/" alt="Liquidapsive site">liquidapsive.com</a></p>
+            <p>Let's head over there and take a look and try to point out the differences.</p>
+        </section>
+
+        <!-- <section class="slide">
+            <h2>One more concept: mobile-first design</h2>
+            <p>We used to design with only a desktop in mind, this has changed with smartphones and tablets, giving rise to "mobile first design"</p>
+            <p>What is it?</p>
+            <li class="delayed">Design an experience for mobile devices first, then desktop, making mobile integral, not an afterthought</li>
+            <li class="delayed">"Graceful Degradation" and "Progressive Enhancement" - fancy words for simple things</li>
+            <li class="delayed">A bit difficult to think this way, but worth it to give all users the best experience possible</li>
+            <li class="delayed">This link is a great overview: <a href="http://designshack.net/articles/css/mobilefirst/" alt="design hack blog">designshack.net/articles/css/mobilefirst/</a></li>
+        </section>
+        
+        <section class="slide">
+          <blockquote>"When you lose 80% of your screen real estate, all the extraneous bloat that tends to finds its way onto large screen designs doesn’t seem so attractive or necessary anymore. Mobile provides a great opportunity to reevaluate what content/functionality is necessary and gives us an opportunity to strip away the cruft across the board (and not just for mobile users either). These constraints also encourage ease-of-use, intuitiveness and speed as essential ingredients to a good user experience."
+          </blockquote>
+          <cite><a href="http://bradfrostweb.com/blog/mobile/the-many-faces-of-mobile-first/">Brad Frost, The Many Faces of Mobile First</a></cite>
+        </section> -->
+
+        <section class="slide title">
+          <h1>Crash Course in HTML5</h1>
+        </section>
+
+        <section class="slide">
+        <h2>A bit of background info</h2>
+          <p>HTML5, or "HyperText Markup Language" is what we wrap the <strong>content</strong> of our site in. It's the only thing you truly need to have a website.</p>
+          <p>However, it takes on default styles of the browser. Uuuuugly. We'll learn how to override these styles in a bit with CSS, which is where we do all our cosmetic changes.</p>
+          <p>For now, let's open up our starter HTML file, <strong>html-ex1.html</strong> in your <strong>"examples" folder</strong></p>
+        </section>
+
+        <section class="slide">
+          <h2>This is it!</h2>
+          <p>This is everthing you need for your HTML file to work properly in a browser.</p>
+          <p>NOTE: those things inside of <code>&lt;!-- --&gt;</code> are comments!</p> 
+          <p>Go ahead and type anything inside the <code>&#60;body&#62;&#60;&#47;body&#62;</code> tags</p>
+          <p>Then refresh your browser's page to see the results!</p>
+        </section>
+
+        <section class="slide" data-markdown>
+##Tags/Elements
+
+Those things with the angled brackets are called HTML tags, they tell the browser what kind of content each of the bits of your website is. The tags plus the content inside of them are an HTML "element".
+
+There's almost always an "opening" tag and a "closing" one. The closing tag has a forward slash. Example: opening paragraph tag: `&#60;p&#62;` closing paragraph tag: `&#60;&#47;p&#62;`
+
+You close tags in the reverse order in which they appear, just like in math. For example, in this code block:
+
+```xml
+&lt;span&gt;&lt;a href=&quot;#&quot;&gt;&lt;p&gt;paragraph wrapped in a link wrapped in a span&lt;/p&gt;&lt;/a&gt;&lt;/span&gt;
+```
+The span opens, the `a` (a link or "anchor" tag) opens, then the paragraph opens. The paragraph closes, the link closes, then the span closes.
+        </section>
+        
+        <section class="slide">
+        <h2>Important Note!</h2>
+          <p>Remember, HTML is about content, it has default browser styles but it is not for styling your document. That's what CSS is for, and we need to keep the both separate!</p>
+          <p>So let's review what we've learned so far and learn what some common HTML elements are.</p>
+          <p>Open up our second HTML example file, <strong>html-ex2.html</strong></p>
+        </section>
+
+        <section class="slide">
+            <h2>Siblings, Parents, and Children</h2>
+            <p>Elements can have "relationships" with other elements in the HTML document.</p>
+            <p>If you put one element inside of another, the element on the outside is the <strong>"parent"</strong> element, while the one inside is the <strong>"child"</strong> element. You can have many child elements inside of a parent, but they all only have one parent.</p>
+            <p>Two or more elements that are both children of the <em>same</em> element are called <strong>"siblings"</strong> - they are on the same level as each other. For example the <code>&lt;head&gt;&lt;/head&gt;</code> and <code>&lt;body&gt;&lt;/body&gt;</code>elements in every HTML document</p>
+        </section>
+        <section class="slide">
+            <h2>Parent, Child, Siblings Example</h2>
+            <pre><code>
+&lt;body&gt; &lt;!--this body element is a parent to the div element and normally a child of the html element--&gt;
+  &lt;div&gt; &lt;!--this div is a child of the body element, and a parent of the p elements--&gt;
+    &lt;p&gt;I am a sibling of the p below me! I am also a child of the div.&lt;/p&gt;
+    &lt;p&gt;I am a sibling of the p above me! I am also a child of the div&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+            </code></pre>
+            <p>Notice the way that the tags are indented, so that you can easily read the HTML and see what is a child, parent, and sibling of what elements. This will come in handy later, so keep up this way of indenting (2 spaces or one tab)</p>
+        </section>
+        <section class="slide">
+          <h2>HTML Element Relationships:</h2>
+          <p>Don't worry about what each of these are, we'll go over that very soon. Just look at the structure.</p>
+          <img src="framework/img/DOM_tree.png" />
+        </section>
+
+        <section class="slide">
+          <h2>What are all the Elements?</h2>
+          <p>We'd be here all day if we had to go over every single HTML5 element - there's so many!</p>
+          <p><a href="https://developer.mozilla.org/en/docs/Web/Guide/HTML/HTML5/HTML5_element_list" alt="HTML5 element list">Here's a handy list of all the ones in use today</a>. The ones with the little orange "5" beside them are new for HTML5.</p>
+          <p>Don't worry, you don't by any means need to memorize all of these!</p>
+          <p>For your reference, I've made a list of the most commonly used tags in the <strong>examples folder</strong> called <strong>html-elements.txt</strong>. Take a look!</p>
+        </section>
+
+        <section class="slide">
+          <h2>One more thing...HTML Attributes!</h2>
+          <p>Elements can have things called "attributes". There's also lots of attributes, but don't worry there's only a few you'll need to know for this workshop:</p>
+          <ul>
+            <li>"class" or "id", used mostly for styling</li>
+            <li>"href", used in the opening anchor tag, it contains a URL for the link</li>
+            <li>"alt", used as alternate text if the website can't represent the content or a screen reader is being used</li>
+            <li>"src", meaning source, used mostly for images, gives the url path for the embedded content</li>
+          </ul>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes" alt="List of HTML attributes">Here's another handy list</a> of all of them!</p>
+        </section>
+
+        <section class="slide">
+          <h2>Enough talk, more code!</h2>
+          <p>Now that we've gone over a lot, let's go through an HTML document together and practice what we've learned!</p>
+          <p>Open up <strong>html-ex3.html</strong> from your examples folder.</p>
+        </section>
+
+        <section class="slide title">
+          <h1>Goodbye Defaults, Hello CSS!</h1>
+        </section>
+
+        <section class="slide">
+          <h2>Intro to CSS</h2>
+          <p>CSS stands for "Cascading Style Sheets"</p>
+          <p>CSS is what we use to tell the browser how to style our HTML document - it's for making things pretty <strong>and usable/accessible</strong></p>
+          <p>Just like HTML, CSS has it's own way of writing it that we have to learn. It looks a little something like this:</p>
+<textarea class="snippet" data-subject="#intro-css">background-color: lightblue;
+font-family: "Times New Roman", serif;</textarea>
+            <div id="intro-css" class="example">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+            </div>
+        </section>
+        
+        <section class="slide" data-markdown>
+##CSS and HTML
+
+A CSS document is made up of a bunch of lines of code, or "rules", that keep referring back to the HTML elements in our HTML document
+
+These rules are always made up of a **selector** and one or more **declarations**. Each declaration has a **property** and a **value**.
+
+```css
+selector {
+  property: value;
+}
+```
+
+The **selector** tells what element(s) to apply the styling to. The **declaration** contains what styles to apply. 
+```css
+h1 {
+  color: red;
+}
+``` 
+        </section>
+
+        <section class="slide">
+          <h2>An Example</h2>
+          <pre><code>
+            body {
+              background-color: pink;
+              color: white;
+              font-family: Helvetica, Arial, sans-serif;
+              font-size: 16px;
+            }
+
+            p {
+              border: 1px solid #333;
+              color: #000;
+              font-weight: italic;
+            }
+          </code></pre>
+          <p>Here we have two selectors (body and p) and they each have their own sets of declatarions inside the { } brackets. The body selector has four declarations, while the p selector has three.</p>
+        </section>
+
+        <section class="slide">
+          <h2>An Example cont.</h2>
+          <pre><code>
+            div {
+              border: 3px solid #333;
+              background-color: lightblue;
+            }
+          </code></pre>
+          <p>Notice that each declaration ends in a semi-colon, and starts on a new line. In addition each property ends in a colon. These are necessary for the browser to understand your styles. The colon and semi-colon are used here a lot like they are in English!</p> 
+          <p>Although you could write all the styles on one line, that's hard to read, so always format your CSS rules this way</p>
+        </section>
+
+        <section class="slide">
+          <h2>Writing CSS - Where Does it Go?</h2>
+          <p>You can technically put CSS in one of three places: inline, internal, and in it's own document (linked/external).</p>
+          <p>In this class, we're going to skip the first two because they're not good practice anyway, and go straight to making our own CSS documents.</p>
+          <p><strong>NOTE:</strong> We've already seen inline styles used in our examples with the "style" attribute, and internal CSS is just CSS rules all together inside the head element, using a style tag.</p>
+        </section>
+
+        <section class="slide">
+          <h2>CSS Properties</h2>
+          <p>If you thought there were a lot of HTML elements, there are even more CSS properties!</p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" alt="list of CSS properties">Here's a great resource on all of them.</a>
+        </section>
+
+        <section class="slide">
+          <h2>Let's make HTML and CSS documents and link them!</h2>
+          <p>In your examples folder you have <strong>html-ex4.html</strong> and <strong>css-ex4.css</strong> and they're both blank.</p>
+          <ol>
+            <li>First, lets write some content in our HTML document</li>
+            <li>Next, we'll write some CSS styles to make it look different</li>
+            <li>Finally we'll get them working together by linking them in the HTML</li>
+          </ol>
+        </section>
+
+        <section class="slide">
+          <h2>Critical CSS Concepts</h2>
+          <p>There are a few things we need to learn about in order to understand our final project.</p>
+          <p>Open up <strong>html-ex5.html</strong> and <strong>css-ex5.css</strong> in your text editor. We'll reference this small site for the next few concepts before moving on to our final project.</p>
+        </section>
+
+        <section class="slide">
+          <h2>First up: the "class" attribute!</h2>
+          <pre><code>
+        &lt;!--in the HTML--&gt;
+
+            &lt;div class=&quot;warning&quot;&gt;&lt;/div&gt;
+
+        /*in the CSS*/
+
+          .warning {
+            background-color: red;
+          }
+          </code></pre>
+          <p>Classes are used mostly for styling purposes, and can be reused throughout your code</p>
+          <p>In the CSS, a class selector starts with a ".", unlike HTML elements</p>
+          <p>You can have an unlimited number of classes on each element, but only add them if you absolutely need to.</p>
+          <p>Let's look at our html-ex5.html and css-ex5.css files for examples</p>
+        </section>
+
+        <section class="slide" data-markdown>
+##CSS Selectors
+###Type Selectors
+```css
+div {
+  /*styles for all divs on the page*/
+}
+
+a {
+  /*styles for all links on the page*/  
+}
+
+p {
+  /*styles for all paragraphs on the page*/
+}
+```
+        </section>
+
+        <section class="slide" data-markdown>
+##CSS Selectors cont.
+###Descendant Selectors
+```css
+div p {
+  /*all paragraphs that are descendants of any divs*/
+}
+
+ul li a {
+  /*links inside of list items inside of unordered lists. 
+  Question: will this affect links inside of ordered lists (ol's)?*/
+}
+```
+        </section>
+
+        <section class="slide" data-markdown>
+##CSS Selectors cont.
+###Class Selectors
+```css
+.container {
+  /*styles for all elements with a class of container, no matter what type*/
+}
+
+p.container {
+  /*styles for all paragraph elements with a class of "container"*/
+}
+
+p.container a {
+  /*guess what this one does!*/
+}
+.container .warning {
+  /*how about this one?*/
+}
+
+.container.warning {
+  /*styles for all elements with BOTH a class of container and warning*/
+}
+```
+        </section>
+
+        <section class="slide" data-markdown>
+##CSS Selectors cont.
+###Grouping
+```css
+h1, h2, h3 {
+  /*all h1, h2, and h3's*/
+}
+
+p, li, a {
+  /*what will this one select?*/
+}
+
+.warning, a, p.cats {
+  /*what will this one select?*/
+}
+```
+        </section>
+
+        <section class="slide">
+          <h2>CSS Selectors cont.</h2>
+          <p>Let's look at our example five CSS and HTML files again, and try to find each type of selector and the grouping we've just learned about:</p>
+          <ul>
+            <li>Type Selectors</li>
+            <li>Descendant Selectors</li>
+            <li>Class Selectors</li>
+            <li>Grouping</li>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>Inheritance</h2>
+          <p>If we look at our <strong>css-ex5.css</strong> file again and look at the body selector. It has a font-size and font-family and so on set on it. But our webpage clearly has paragraphs and other elements we could declare a font on. Why is it on body then?</p>
+          <p>Remember that CSS stands for Cascading Style Sheets? Now we know what they mean by cascading! The browser reads the CSS from the top of the page down, and some of these styles are "inherited" from their parents.</p>
+
+        </section>
+
+        <section class="slide" data-markdown>
+##Specificity
+###What's going on here? Why are there so many "h2"'s?
+```css
+h2, h3, h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+h2, h3 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+section h2 {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+```
+        </section>
+
+        <section class="slide" data-markdown>
+##Specificity cont.
+The most specific OR the most recent CSS rule will be selected. Which one gets selected is based largely on magic.
+
+GENERAL RULE: the styles for an element that came last in the CSS document will be used, unless overridden by a more "specific" selector. Classes, for example, make things more specific than just a type selector would be.
+
+Example:
+```css
+p {
+  /*less specific*/
+}
+
+p.special-paragraph {
+  /*more specific*/
+}
+```
+        </section>
+        <section class="slide">
+          <h2>The Box Model</h2>
+          <p>Margins, padding, widths, and borders oh my: the glorious box model.</p>
+          <img src="images/boxmodel.png" alt="box model">
+        </section>
+<section class="slide" data-markdown>
+##Border-Box
+
+Now that we know what the box model is, lets fix it. Because CSS is so very broken.
+```css
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+```
+Check out **css-ex5.css** for an example.
+</section>
+
+        <section class="slide title">
+          <h1>Part Two: Implementation</h1>
+          <h2>How do we make our site responsive?</h2>
+        </section>
+
+        <section class="slide">
+          <h2>Responsive Design</h2> 
+          <p>Remember: responsive design simply means <strong>the best user experience on all devices.</strong></p>
+          <p>Responsive CSS will react to the resizing of the browser's viewport (the bit of the page you can see on your screen without scrolling) and change it's rules to best suit that viewport size.</p>
+          <p>How???</p> 
+        </section>
+
+        <section class="slide">
+          <h2>Media Queries</h2>
+          <p>A fluid layout using percentages + media queries = responsive design</p>
+          <p>Step one: the meta viewport tag</p>
+          <pre><code>
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+          </code></pre>
+          <p>Without this our media queries won't work. It goes inside the head tags in our HTML document. Don't forget it!</p>
+          <p>Let's add it in to our final project site now.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Media Queries cont.</h2>
+          <p><strong>What do media queries do?</strong></p>
+          <p>They apply CSS to your document only when the viewport has reached a certain size (eg. 1200px)</p>
+          <p><strong>What do they look like?</strong></p>
+          <pre><code>
+            @media (max-width: 1200px) {
+              body {
+                background-color: purple;
+              }
+            }
+          </code></pre>
+          <p>The above says any viewport with a maximum width of 1200px will have a body with a background-color of purple. So any screen 1200px wide or LESS will get the styles inside of this media query.</p> 
+          <p>If the viewport is 1201px will the background be purple? What if it's 1199px?</p>
+        </section>
+        
+        <section class="slide">
+          <h2>Media Queries: an Example</h2>
+          <p>To see what this looks like, open up <strong>html-ex6.html</strong> and <strong>css-ex6.css</strong></p>
+          <p>We'll want to add some media queries in to our CSS to change a few things. Resize the browser window - what breaks?</p>
+        </section>
+        
+        <section class="slide">
+          <h2>Solving our Problems with Media Queries</h2>
+          <p>How about this:</p>
+          <img src="images/outside-numbers.jpg">
+          <p>While there are lots of things we can do to solve this, a easy one is change the text size!</p>
+        </section>
+
+        <section class="slide" data-markdown>
+##Coding Media Queries
+First, let's add some background colours into each media query to help us see where the breakpoints are, like this:
+
+```css
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  body {
+    background-color: pink;
+  }
+}
+```
+        </section>
+
+        <section class="slide" data-markdown>
+##Coding Media Queries cont.
+Let's try changing the size of the text (.box p) to 3rem, 2.5rem, and then 2rem.
+
+The first one will look like this:
+
+```css
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  body {
+    background-color: pink;
+  }
+  .box p {
+    font-size: 3rem;
+  }
+}
+```
+        </section>
+        <section class="slide" data-markdown>
+##Coding Media Queries cont.
+How about the size of the text in the aside (sidebar) and the big paragraph?
+
+Lets make them a bit smaller on smaller size screens. 
+
+How about **1.5rem on the p selector**? Remember why that won't effect the paragraph in the .box div?
+        </section>
+
+        <section class="slide">
+          <h2>Coding Media Queries cont.</h2>
+          <p>Let's try one more, a harder one this time. The aside element looks pretty squished when we resize the browser to a smaller viewport.</p>
+          <p>Let's make the element sit on top of the three .box elements</p>
+          <p>But...how?</p>
+          <ul>
+            <li class="delayed">Set the width of the aside to 100%</li>
+            <li class="delayed">This works only becuase we've put it before the main block of elements</li>
+            <li class="delayed">Set aside p to display:inline-block</li>
+            <li class="delayed">What else should we do?</li>
+          </ul>
+        </section>
+
+        <section class="slide">
+          <h2>A Brief Interlude: the Web Inspector</h2>
+          <p>We have a handy tool to see our page in specific device sizes, and to help us figure out what elements get what styles from where. It's the Web Inspector!</p>
+          <ul>
+            <li>Right click anywhere in the browser viewport</li>
+            <li>Select <strong>Inspect Element</strong></li>
+            <li>Refresh the browser</li>
+          </ul>
+        </section>
+        
+        <section class="slide">
+          <h2>A Brief Interlude: the Web Inspector</h2>
+          <p>The red box: our website. The green box: our HTML. The orange box: our CSS rules.</p>
+          <img src="images/emulator.jpg">
+        </section>
+
+        <section class="slide">
+          <h2>Responsive and the Web Inspector</h2>
+          <a href="https://developer.chrome.com/devtools/docs/device-mode">More about the web inspector</a>
+          <p>The new web inspector has awesome media query support!</p>
+          <img src="images/web-inspector-mq.jpg" alt="media queries in new web inspector">
+        </section>
+
+        <section class="slide">
+          <h2>Starting our Final Project!</h2>
+          <p>We now know enough to dive into our project for today!</p>
+          <p>In our class files we have a folder called <strong>final-project</strong>. Open the <strong>index.html</strong> file in Sublime and in your browser - where are all the styles? Why does it still look like the default styling?</p>
+        </section>
+        
+        <section class="slide">
+          <h2>Starting our Final Project</h2>
+          <p>We're starting with a nice fluid design, where most of the content is centered. This means we're already ahead of the game. </p>
+          <p>Let's find some things we've learned throughout the code in this website:</p>
+          <ul>
+            <li class="delayed">Nesting HTML elements</li>
+            <li class="delayed">Attributes, including class attributes</li>
+            <li class="delayed">CSS rule syntax: selector, declaration (property + value)</li>
+            <li class="delayed">CSS selectors: type, class, descendant. Grouping them together.</li>
+            <li class="delayed">Inheritence and Specificity</li>
+            <li class="delayed">Percentage-based fluid layout (eg. see .content-wrap)</li>
+          </ul>
+        </section>
+        
+        <section class="slide">
+          <h2>What can we Improve?</h2>
+          <p>We'll target a few main things that are always important to keep in mind when doing responsive design.</p>
+          <ul>
+            <li class="delayed">Hide fixed elements on smaller screens</li>
+            <li class="delayed">Margin, padding and text sizing on header and circle elements</li>
+            <li class="delayed">Image size and positioning</li>
+            <li class="delayed">:hover effects and similar things to think about</li>
+            <li class="delayed">Centering all the things, spacing/whitespace</li>
+            <li class="delayed">Navigation!</li>
+          </ul>
+        </section>
+
+        <section class="slide" data-markdown>
+##Hiding Elements
+Don't make this a habit: it's convenient but the browser still needs to load this code, and that slows your site down. Use it sparingly!
+
+```css
+@media (max-width: somewidthpx) {
+  somediv {
+    display: none;
+  }
+}
+```
+That's it! If we look at our site as a small phone in the emulator we can see the "download pdf" button takes up too much screen real estate - let's hide it on our smallest screens.
+        </section>
+
+        <section class="slide">
+          <h2>Typography</h2>
+          <p>We could have an entire class on web typography alone.</p>
+          <p><strong>Margin, padding, line-height, text-size, and font-family.</strong></p>
+          <p>These are all extremely important in responsive design - keep your text limited and meaningful, use one to two readable fonts, and make sure text is a good size for all screen sizes.</p>
+          <p>Typography on a responsive site should be: readable, efficient, and responsive itself. How do we accomplish this?</p>
+        </section>
+
+        <section class="slide">
+          <h2>Responsive Type: Rems and Ems Versus Pixels</h2>
+          <ul>
+            <li class="delayed"><strong>px:</strong> pixels, not responsive. Boo.</li>
+            <li class="delayed"><strong>em:</strong> size is relative to the type size of the parent element. Eg. if parent element is 14px and child element is 1em, child element is 14px. If child element is 0.5em child element is 7px</li>
+            <li class="delayed"><strong>rem:</strong> root ems - like ems but relative ONLY to the root element (html element)</li>
+          </ul>
+          <p class="delayed">This can be very confusing. Here's a great way to approach it: <a href="http://css-tricks.com/rems-ems/" alt="css tricks rems versus ems article">http://css-tricks.com/rems-ems</a></p>
+          <p class="delayed">When in doubt, just use rems, and set font-size on your html element (default usually 16px).</p>
+        </section>
+        <section class="slide" data-markdown>
+##Making our Web Copy Responsive
+Let's go through our final project CSS and change some of the font-sizes to rems.
+
+Since the root font-size is 16px, just divide the pixel size in the CSS by 16. 
+
+Example:
+
+```css
+h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 5rem; /*used to be 80px*/
+  font-weight: 400;
+  margin: 0;
+}
+```
+        </section>
+
+        <section class="slide">
+          <h2>Margin and Padding</h2>
+          <p>From the 768px media query down, the circles in the Skills section don't look great. We can change this by adjusting our <strong>margin</strong> and <strong>padding</strong> values.</p>
+          <ol>
+            <li class="delayed">First, let's use the web inspector to find out what classes/elements we need to target</li>
+            <li class="delayed">Next, we'll go to our CSS and target that class in our 768px media query</li>
+            <li class="delayed">We want to space the circles out a bit more, so let's add a margin to the elements</li>
+          </ol>
+        </section>
+
+        <section class="slide">
+          <h2>Resizing Elements</h2>
+          <p>You might notice that at our 480px media query the circles are in one long line. They're taking up too much room! Scrolling is boring, so let's make these a bit smaller.</p>
+          <p>Again, target the element in the media query. Then change the height, width, margin, and line-height properties.</p>
+          <p>Oh no! the font size is too big too, let's change that! Notice how we don't have to include the margin value from the last query - remember styles inherit/cascade!</p>
+        </section>
+
+        <section class="slide">
+          <h2>Profile Image</h2>
+          <p>Our profile image gets really small at smaller screens. It also takes up a lot of room from 480px. What should we do with it?</p>
+          <ol>
+            <li>Make it a bit smaller by changing width to 60%</li>
+            <li>set the display property to the value "block"</li>
+            <li>set margin to 0 auto, the magical centering declaration for block elements</li>
+            <li>Set float to "none", as it was float:left before</li>
+            <li>Go back to margin and actually set it to     margin:0 auto 4rem; to put some space on the bottom</li>
+          </ol>
+        </section>
+        <section class="slide" data-markdown>
+##Centering Text, Removing Floats
+
+The content under our profile picture doesn't look so hot on our smallest screen. Centering content is a simple, common way of getting some white space on a cramped mobile screen.
+
+Try this out on our 480px media query:
+
+```css
+.profile .summary {
+  text-align: center;
+  float: none;
+  width: 100%; /*notice we still have padding from the code above*/
+}
+```
+
+        </section>
+
+        <section class="slide">
+          <h2>A Note on Navigation</h2>
+          <p>So far we're using the "do nothing approach" and for our site, it's ok</p>
+          <p>But what if we wanted to add more sections/links? We're not showing any content </p>
+          <p><strong>Next steps:</strong> <a href="http://bradfrostweb.com/blog/web/responsive-nav-patterns/">common mobile navigation solutions</a> and what to think about when designing navigation.</p>
+        </section>
+
+            <!-- REMOVE THIS SLIDE WHEN RETEACHING THIS WORKSHOP -->
+        <section class="slide">
+          <h2>Mobile Navigation !NEW POST-WORKSHOP SLIDE!</h2>
+          <p><strong>For those of you in the workshop on saturday Oct. 25:</strong></p> 
+          <p>Unfortunately I ran out of time and can't make the mobile nav slides right now, but check out this great post on how to make various kinds of responsive mobile navs: <a href="http://css-tricks.com/responsive-menu-concepts/">css-tricks.com/responsive-menu-concepts</a></p>
+          <p>You can do any of the ones that say "no javascript required" (or try the Javascript one(s) as a next step if you're feeling adventurous!</p>
+        </section>
+        <!-- REMOVE THIS SLIDE WHEN RETEACHING THIS WORKSHOP -->
+
+        <section class="slide">
+          <h2>Final Notes</h2>
+          <p>Responsive is an iterative process. Don't get discouraged if every time you look back at your site, something needs to be changed! Websites are never "done", even the best can always be improved.</p>
+          <p>When in doubt:</p>
+          <ul>
+            <li>Center content (but keep it readable and large enough on small screens)</li>
+            <li>Don't use fixed elements, hover effects, etc. as necessary parts of the functionality of your site</li>
+            <li>Think about <strong>HOW</strong> your user will be using your site: mobile's different!</li>
+            <li>Keep it simple! Less words, utilize white space</li>
+            <li>Remember your site will never look pixel perfect on 100% of viewport sizes</li>
+          </ul>
+        </section>
+        
+        <!-- Last slide -->
+        <section class="slide">
+            <h2>Thank you!</h2>
+            <p>My email: <a href="mailto:eeporta@gmail.com">eeporta@gmail.com</a></p>
+            <p>Twitter: <a href="http://twitter.com/agentemily" alt="emily's twitter account">@agentemily</a></p>
+            <p class="attribution">Slide deck created with <a href="https://github.com/LeaVerou/csss">Lea Verou's CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+        </section>
+
+    </main><!-- cls main section -->
+
+
+    <footer>
+        <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+        <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+    </footer>
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="framework/scripts/slideshow.js"></script>
+
+    <!-- Uncomment the plugins you need -->
+    <script src="framework/scripts/plugins/css-edit.js"></script>
+    <script src="framework/scripts/plugins/css-snippets.js"></script>
+    <script src="framework/scripts/plugins/css-controls.js"></script>
+    <!-- <script src="plugins/code-highlight.js"></script>-->
+
+    <script src="framework/scripts/plugins/markdown/marked.js"></script>
+    <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+    <script src="framework/scripts/plugins/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify -->
+    <script src="framework/scripts/plugins/prettify.js"></script>
+    <script src="framework/scripts/plugins/lang-css.js"></script>
+    <script src="framework/scripts/plugins/prism.js"></script>
+
+    <script>
+        var slideshow = new SlideShow();
+
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+
+        // Opens all links in a new window
+        var links = document.getElementsByTagName("a");
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener(function() {
+                window.open(this.href);
+            });
+        }
+
+        jQuery(document).ready(function(){
+            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+        });
+    </script>
+</body>
+</html>

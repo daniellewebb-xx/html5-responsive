@@ -1,0 +1,17 @@
+/* Styles specific to this workshop
+------------------------------------*/
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/\/Users\/emilyporta\/Desktop\/Sites\/llc-slidedeck-template\/framework\/sass\/workshop\.scss;
+  }
+
+  line {
+    font-family: \000036;
+  }
+}
+
+.slide img {
+  display: block;
+  margin: 0 auto;
+}
